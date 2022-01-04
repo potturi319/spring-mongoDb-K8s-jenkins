@@ -24,7 +24,7 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
-	private String phone;
+    private String phone;
 
     public User(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
@@ -81,7 +81,7 @@ public class User implements Serializable {
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
                 Objects.equals(email, user.email) &&
-				 Objects.equals(phone, user.phone);
+				Objects.equals(phone, user.phone);
     }
 
     @Override

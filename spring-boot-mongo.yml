@@ -21,7 +21,7 @@ spec:
     spec: 
       containers: 
       - name : spring-con
-        image: potturi319/spring:Build
+        image: potturi319/spring-boot-mongo:Build
         ports:
         - containerPort: 8080
         env:

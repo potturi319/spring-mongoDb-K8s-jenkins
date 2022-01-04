@@ -36,7 +36,7 @@ options{
     stage('Build Docker image')
    {
      steps{
-	   sh 'docker build -t potturi319/spring-boot-mongo .'
+	   sh 'docker build -t potturi319/spring-boot-mongo:$BUILD_NUMBER .'
 	 }
    }
    
@@ -53,9 +53,17 @@ options{
    withCredentials([string(credentialsId: 'DOKCER_HUB_PASSWORD', variable: 'DOKCER_HUB_PASSWORD')]) {
           sh "docker login -u potturi319 -p ${DOKCER_HUB_PASSWORD}"
         }
-        sh 'docker push potturi319/spring-boot-mongo'
+        sh 'docker push potturi319/spring-boot-mongo:$BUILD_NUMBER'
  }
  }
+	stage ('change tag name in spring deployment file') {
+		steps {
+			sh 'sed -i 's/Bulid/${BUILD_NUMBER}/g' spring-boot-mongo.yml'
+
+		}
+	
+	}
+
 	stage('UploadArtifactintoNexus')
    {
      steps{
