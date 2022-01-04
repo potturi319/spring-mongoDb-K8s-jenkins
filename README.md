@@ -22,14 +22,14 @@ Create docker image using Dockerfile
 docker build -t dockerhandson/spring-boot-mongo .
 ```
 
-## Deploy Application Using Docker Compose 
+## Deploy Application Using kubernetes 
 
-```docker-compose 
-docker-compose up -d 
+```kubernetes
+kubectl apply -f spring-boot-mongo.yaml 
 ```
 
-## List Docker Containers
-```docker
-docker ps -a
+## List pods in kubernetes
+```kubernetes
+kubectl get pods 
 ```
 
