@@ -19,7 +19,7 @@ Create docker image using Dockerfile
 
 
 ```docker
-docker build -t potturi319/spring-boot-mongo .
+docker build -t potturi319/spring-boot-mongo:$BUILD_NUMBER .
 ```
 
 ## Deploy Application Using kubernetes 
